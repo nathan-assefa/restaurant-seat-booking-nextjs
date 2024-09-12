@@ -1,21 +1,22 @@
 "use client";
 
-import { useState } from "react";
-import { Calendar } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { Calendar as CalendarComponent } from "@/components/ui/calendar";
-import ResImages from "../images/res-seats.jpg";
+// import { useState } from "react";
+// import { Calendar } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+// import { Input } from "@/components/ui/input";
+// import { Label } from "@/components/ui/label";
+// import {
+//   Popover,
+//   PopoverContent,
+//   PopoverTrigger,
+// } from "@/components/ui/popover";
+// import { Calendar as CalendarComponent } from "@/components/ui/calendar";
+// import ResImages from "../images/res-seats.jpg";
 import Image from "next/image";
+import BookingPage from "@/components/booking";
 
 export default function LandingPage() {
-  const [date, setDate] = useState<Date>();
+  // const [date, setDate] = useState<Date>();
 
   return (
     <div className="flex flex-col min-h-screen bg-green-50">
@@ -45,11 +46,18 @@ export default function LandingPage() {
       </header>
 
       <main className="flex-grow">
-        <section className="relative h-[60vh] flex items-center justify-center bg-green-700 text-white">
+        <section className="relative h-[40vh] sm:h-[60vh] flex items-center justify-center bg-green-700 text-white">
           <div className="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-50"></div>
+          <Image
+            src={ResImages}
+            alt="Table layout"
+            className="w-full h-full rounded-full"
+          />
           <div className="relative z-10 text-center p-2 sm:pd-0">
-            <h2 className="text-4xl font-bold mb-1">Welcome to Agelgel</h2>
-            <p className="text-xl mb-8">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-1">
+              Welcome to Agelgel
+            </h2>
+            <p className="text-sm sm:text-xl mb-8">
               Experience nature-inspired dining in the heart of the city
             </p>
             <a
@@ -60,7 +68,6 @@ export default function LandingPage() {
             </a>
           </div>
         </section>
-
         <section id="about" className="py-16 bg-white">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-green-800">About Us</h2>
@@ -73,7 +80,7 @@ export default function LandingPage() {
           </div>
         </section>
         <div></div>
-        <section id="book" className="py-24 bg-green-100 text-white">
+        {/* <section id="book" className="py-24 bg-green-100 text-white">
           <div className="container mx-auto">
             <h2 className="text-4xl font-bold mb-12 text-center text-green-800">
               Reserve Your Green Experience
@@ -166,18 +173,21 @@ export default function LandingPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </div> */}
+        {/* </section> */}
+        <div id="book">
+          <BookingPage />
+        </div>
       </main>
 
-      <footer id="contact" className="bg-green-800 text-white py-8">
+      {/* <footer id="contact" className="bg-green-800 text-white py-8">
         <div className="container mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
           <p>123 Green Street, London, 12345</p>
           <p>Phone: (123) 456-7890</p>
           <p>Email: info@greeneats.com</p>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }
