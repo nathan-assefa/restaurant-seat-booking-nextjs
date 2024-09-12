@@ -12,7 +12,7 @@
 // } from "@/components/ui/popover";
 // import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 // import ResImages from "../images/res-seats.jpg";
-import Image from "next/image";
+// import Image from "next/image";
 import BookingPage from "@/components/booking";
 
 export default function LandingPage() {
@@ -48,11 +48,7 @@ export default function LandingPage() {
       <main className="flex-grow">
         <section className="relative h-[40vh] sm:h-[60vh] flex items-center justify-center bg-green-700 text-white">
           <div className="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-50"></div>
-          <Image
-            src={ResImages}
-            alt="Table layout"
-            className="w-full h-full rounded-full"
-          />
+
           <div className="relative z-10 text-center p-2 sm:pd-0">
             <h2 className="text-3xl sm:text-4xl font-bold mb-1">
               Welcome to Agelgel
